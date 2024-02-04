@@ -1,0 +1,59 @@
+Data Structures 
+--> Linear
+	>Array          Stack 
+	>Stack        
+	>Queue        
+	>Linked List    Heap
+	>
+--> Non Linear
+	>Tree     uses linked list
+	>Graph    uses multiple loops
+	>Trie
+	>Bit Maps
+	>List
+		List<datatype> Lstnm = new List<datatype>();
+		   int,string.....
+		
+		Lstnm.Add();
+		
+		
+		
+		
+		
+		
+
+
+Algorithms
+	>Brute Force
+	>Divide n Conquer
+		>Merge Sort
+		>Binary Search
+	>Greedy
+	>Searching
+	>Recursion
+	>Dynamic Programming
+	>Back Tracking
+	> Hashing
+	> Randomized
+	>Sorting
+
+
+
+
+
+Assymptotic Notations
+>Big O     Worst Case (Quadratic graph)
+>Thetta θ  Specific Case
+>Omega	Ω  Best Case
+
+
+
+Q> Write a function to print 1st 5 natural nnumbers
+
+Brute Force> Loop
+
+Q> Give 450 to someone, you have 100, 50, 20,10. Give min number of notes
+
+Greedy Approach> Optimal approach  4 X 100 and 1 X 50 (divide by max value and the remaining with 2nd max value and so on)
+
+
