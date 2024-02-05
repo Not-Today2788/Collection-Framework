@@ -11,34 +11,38 @@ namespace Collection_Framework
     {
         static void Main(string[] args)
         {
-            Dictionary<int, string> ox = new Dictionary<int,string>();
+            //Creating Linkedlist
+            LinkedList<string> lnlst = new LinkedList<string>();
 
-            ox.Add(1, "one");
-            ox.Add(2, "two");
-            ox.Add(3, "three");
-            ox.Add(4, "four");
-            ox.Add(5, "five");
+            //inserting elements
+            //lnlst.AddLast("a");
+            lnlst.AddFirst("a");
+            lnlst.AddLast("b");
+            lnlst.AddLast("c");
+            lnlst.AddLast("d");
+            lnlst.AddLast("e");
 
-            //bool addedSuccessfully = ox.TryAdd(key, value);
-
-
-            //Console.WriteLine(ox.TryAdd(6,"six"));
-
-            ox.Remove(3);
-
-            Console.WriteLine("\n1: "+ox[1]);
-
-            Console.WriteLine(ox.TryGetValue(5,out string six ));
-
-            Console.WriteLine(ox.ContainsKey(6 ));
-
-            Console.WriteLine(ox.ContainsValue("four"));
-
-            Console.WriteLine(six);
-
-            foreach(var i in ox)
+            LinkedListNode<string> node2 = lnlst.Find("c");
+            
+            if (node2 != null)
             {
-                Console.WriteLine($"\nKey: {i.Key}  Value: {i.Value}");
+                lnlst.AddBefore(node2, "cat");
+                lnlst.AddAfter(node2, "dog");
+            }
+            else
+            {
+                Console.WriteLine("Node not found");
+            }
+
+            /* var node= lnlst.AddLast("b");
+            lnlst.AddAfter(node, "c");
+            lnlst.AddBefore(node, "d");
+            */
+
+            foreach(var item in lnlst)
+            {
+
+                Console.WriteLine(item);
             }
         }
     }
