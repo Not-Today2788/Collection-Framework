@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,56 +11,35 @@ namespace Collection_Framework
     {
         static void Main(string[] args)
         {
-            Stack<int> qwe = new Stack<int>();
+            Dictionary<int, string> ox = new Dictionary<int,string>();
 
-            qwe.Push(1);
-            qwe.Push(2);
-            qwe.Push(3);
-            qwe.Push(4);
-            qwe.Push(5);
-            qwe.Push(6);
-            qwe.Push(7);
-            qwe.Push(8);
-            qwe.Push(9);
-            qwe.Push(10);
-            qwe.Push(11);
-            qwe.Push(12);
+            ox.Add(1, "one");
+            ox.Add(2, "two");
+            ox.Add(3, "three");
+            ox.Add(4, "four");
+            ox.Add(5, "five");
 
-            Console.WriteLine("Does it contain 4 inside it: "+qwe.Contains(4));
+            //bool addedSuccessfully = ox.TryAdd(key, value);
 
-            Console.WriteLine("\n Total Elements: " + qwe.Count);
 
-            Console.WriteLine("\n Popping: "+qwe.Pop());
+            //Console.WriteLine(ox.TryAdd(6,"six"));
 
-            Console.WriteLine("\n Total Elements: "+qwe.Count);
+            ox.Remove(3);
 
-            Console.WriteLine("\n Top Element: "+qwe.Peek());
+            Console.WriteLine("\n1: "+ox[1]);
 
-            Console.WriteLine();
-            foreach(int i in qwe)
+            Console.WriteLine(ox.TryGetValue(5,out string six ));
+
+            Console.WriteLine(ox.ContainsKey(6 ));
+
+            Console.WriteLine(ox.ContainsValue("four"));
+
+            Console.WriteLine(six);
+
+            foreach(var i in ox)
             {
-                Console.Write(" "+i);
+                Console.WriteLine($"\nKey: {i.Key}  Value: {i.Value}");
             }
-
-            
-            Console.WriteLine();
-
-            int[] ints = qwe.ToArray();
-
-            foreach (int i in ints)
-            {
-                Console.WriteLine(i);
-            }
-
-
-
-            qwe.Clear();
-            Console.WriteLine("\nElements are gone: ");
-            foreach (int i in qwe)
-            {
-                Console.Write(" " + i);
-            }
-            Console.WriteLine();
         }
     }
 }
