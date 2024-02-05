@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,61 +11,35 @@ namespace Collection_Framework
     {
         static void Main(string[] args)
         {
-            List<string> listna = new List<string>();
+            Dictionary<int, string> ox = new Dictionary<int,string>();
 
-            listna.Add("A");
-            listna.Add("B");
-            listna.Add("C");
-            listna.Add("D");
-            listna.Add("E");
+            ox.Add(1, "one");
+            ox.Add(2, "two");
+            ox.Add(3, "three");
+            ox.Add(4, "four");
+            ox.Add(5, "five");
 
-            //Console.WriteLine(listna);
-            foreach (var i in listna)
+            //bool addedSuccessfully = ox.TryAdd(key, value);
+
+
+            //Console.WriteLine(ox.TryAdd(6,"six"));
+
+            ox.Remove(3);
+
+            Console.WriteLine("\n1: "+ox[1]);
+
+            Console.WriteLine(ox.TryGetValue(5,out string six ));
+
+            Console.WriteLine(ox.ContainsKey(6 ));
+
+            Console.WriteLine(ox.ContainsValue("four"));
+
+            Console.WriteLine(six);
+
+            foreach(var i in ox)
             {
-                Console.Write("     "+i);
+                Console.WriteLine($"\nKey: {i.Key}  Value: {i.Value}");
             }
-
-
-            Console.WriteLine();
-            Console.WriteLine("\nRemoving B from the list\n");
-            listna.Remove("B");
-
-            foreach (var i in listna)
-            {
-                Console.Write("     " + i);
-            }
-
-            Console.WriteLine("\nRemoving elements in the range 0 to 3\n");
-            listna.RemoveRange(0,3);
-
-            foreach (var i in listna)
-            {
-                Console.Write("     " + i);
-            }
-
-            listna.Add("b");
-            listna.Add("c");
-            listna.Add("d");
-            listna.Add("e");
-            listna.Add("X");
-            Console.WriteLine("\n");
-            foreach (var i in listna)
-            {
-                Console.Write("     " + i);
-            }
-
-            Console.WriteLine("\n Elememt at 0th positon: "+ listna[0] + "\n");
-
-            Console.WriteLine("Index of X: " + listna.IndexOf("X"));
-
-            Console.WriteLine("\nList Count: "+ listna.Count+"\n");
-            
-
-            foreach(object i in listna)
-            {
-                Console.Write("     " + i);
-            }
-            Console.WriteLine();
         }
     }
 }
